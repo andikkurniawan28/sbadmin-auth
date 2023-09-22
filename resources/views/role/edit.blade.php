@@ -15,13 +15,7 @@
 @section("form")
     <form action="{{ route("role.update", $data->id) }}" method="POST">
         @csrf @method("PUT")
-        @include("components.input1", [
-            "name"          => "name",
-            "type"          => "text",
-            "value"         => $data->name,
-            "placeholder"   => "Enter name ...",
-            "modifier"      => "required autofocus",
-        ])
-        <button type="submit" class="btn btn-primary">{{ ucfirst("submit") }}</button>
+        <x-input1 name="name" type="text" value="{{ $data->name }}" placeholder="Enter name ..." modifier="required autofocus"></x-input1>
+        <x-submit></x-submit>
     </form>
 @endsection

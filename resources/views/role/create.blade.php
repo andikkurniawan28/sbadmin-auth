@@ -15,13 +15,7 @@
 @section("form")
     <form action="{{ route("role.store") }}" method="POST">
         @csrf @method("POST")
-        @include("components.input1", [
-            "name"          => "name",
-            "type"          => "text",
-            "value"         => NULL,
-            "placeholder"   => "Enter name ...",
-            "modifier"      => "required autofocus",
-        ])
-        <button type="submit" class="btn btn-primary">{{ ucfirst("submit") }}</button>
+        <x-input1 name="name" type="text" value="" placeholder="Enter name ..." modifier="required autofocus"></x-input1>
+        <x-submit></x-submit>
     </form>
 @endsection
