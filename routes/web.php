@@ -5,6 +5,7 @@ use App\Http\Controllers\ActivityLogController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\UserController;
 
 // Authentication
 Route::get("login", [AuthController::class, "login"])->name("login");
@@ -21,3 +22,4 @@ Route::get("activity_log", ActivityLogController::class)->name("activity_log")->
 
 // CRUD
 Route::resource("role", RoleController::class)->middleware(["auth", "is_admin"]);
+Route::resource("user", UserController::class)->middleware(["auth", "is_admin"]);

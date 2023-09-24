@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('activity_logs', function (Blueprint $table) {
             $table->id();
-            $table->foreignId("user_id")->constrained();
+            $table->foreignId("user_id")->constrained()->onDelete("cascade");
             $table->text("description");
             $table->text("data")->nullable();
             $table->timestamp("created_at")->useCurrent();

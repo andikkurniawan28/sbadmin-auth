@@ -9,7 +9,7 @@
 @endsection
 
 @section("breadcrumb")
-    @include("components.breadcrumb3")
+    <x-breadcrumb3></x-breadcrumb3>
 @endsection
 
 @section("form")

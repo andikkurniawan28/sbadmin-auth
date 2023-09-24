@@ -1,7 +1,7 @@
 @extends("layouts.app_table")
 
 @section("title")
-    {{ ucfirst("role") }}
+    {{ ucfirst("user") }}
 @endsection
 
 @section("breadcrumb")
@@ -9,7 +9,7 @@
 @endsection
 
 @section("create")
-    {{ route("role.create") }}
+    {{ route("user.create") }}
 @endsection
 
 @section("table")
@@ -18,7 +18,10 @@
             <tr>
                 <th>{{ strtoupper("id") }}</th>
                 <th>{{ ucfirst("timestamp") }}</th>
+                <th>{{ ucfirst("role") }}</th>
                 <th>{{ ucfirst("name") }}</th>
+                <th>{{ ucfirst("username") }}</th>
+                <th>{{ ucfirst("is_active") }}</th>
                 <th>{{ ucfirst("action") }}</th>
             </tr>
         </thead>
@@ -27,12 +30,15 @@
             <tr>
                 <td>{{ $data->id }}</td>
                 <td>{{ $data->created_at }}</td>
+                <td>{{ $data->role->name }}</td>
                 <td>{{ $data->name }}</td>
+                <td>{{ $data->username }}</td>
+                <td>{{ $data->is_active }}</td>
                 <td>
                     @include("components.action_group_button", [
-                        "show"      => route("role.show", $data->id),
-                        "edit"      => route("role.edit", $data->id),
-                        "delete"    => route("role.destroy", $data->id),
+                        "show"      => route("user.show", $data->id),
+                        "edit"      => route("user.edit", $data->id),
+                        "delete"    => route("user.destroy", $data->id),
                     ])
                 </td>
             </tr>

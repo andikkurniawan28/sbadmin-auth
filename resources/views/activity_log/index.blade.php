@@ -5,7 +5,7 @@
 @endsection
 
 @section("breadcrumb")
-    @include("components.breadcrumb1")
+    <x-breadcrumb1></x-breadcrumb1>
 @endsection
 
 @section("table")
